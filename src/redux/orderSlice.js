@@ -5,8 +5,8 @@ const orderSlice = createSlice({
   initialState: [],
   reducers: {
     addOrder: (state, action) => {
-      const { id, date, status, type, size, base } = action.payload;
-      state.push({ id, date, status, type, size, base });
+      const { id, createdAt, status, type, size, base } = action.payload;
+      state.push({ id, createdAt, status, type, size, base });
     },
     updateOrderStatus: (state, action) => {
         const { id, newStatus } = action.payload;

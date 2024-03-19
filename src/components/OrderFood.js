@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useDispatch, useSelector } from "react-redux";
 import { addOrder } from "../redux/orderSlice";
+import moment from "moment";
 
 const OrderFood = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const OrderFood = () => {
     } else {
       const newOrder = {
         id: Date.now(),
-        date: new Date().toLocaleString(),
+        createdAt: moment().format('YYYY-MM-DD HH:mm:ss.SS'),
         status: "Placed",
         ...orderData,
       };
